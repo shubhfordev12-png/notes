@@ -1,0 +1,414 @@
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IACSD | Build Your IT Career</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #f5f8ff;
+            color: #17233d;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 18px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: #123b78;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #08a6d6;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #26344d;
+            margin-left: 22px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            color: #079fce;
+        }
+
+        .hero {
+            padding: 90px 7%;
+            min-height: 510px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: linear-gradient(120deg, #eaf3ff, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 620px;
+        }
+
+        .tag {
+            color: #078bb9;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 5vw, 58px);
+            line-height: 1.15;
+            margin: 18px 0;
+            color: #102d59;
+        }
+
+        h1 span {
+            color: #078fc5;
+        }
+
+        .hero p {
+            color: #58667b;
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 23px;
+            background: #087fba;
+            color: white;
+            border-radius: 7px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px 8px 5px 0;
+            border: 2px solid #087fba;
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: #075b91;
+            border-color: #075b91;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #087fba;
+        }
+
+        .hero-art {
+            width: 340px;
+            min-width: 260px;
+            height: 300px;
+            border-radius: 28px;
+            background: linear-gradient(140deg, #123b78, #087fba);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            box-shadow: 0 20px 45px rgba(18,59,120,0.2);
+        }
+
+        .hero-art .symbol {
+            font-size: 75px;
+            margin-bottom: 15px;
+        }
+
+        .hero-art h2 {
+            font-size: 25px;
+        }
+
+        .hero-art p {
+            color: #dceeff;
+            margin: 8px 0 0;
+            font-size: 14px;
+        }
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            color: #123b78;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        .features, .courses {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card, .course-card {
+            background: white;
+            padding: 28px;
+            border-radius: 14px;
+            border: 1px solid #e6edf7;
+            box-shadow: 0 8px 25px rgba(24,51,91,0.05);
+            transition: 0.25s;
+        }
+
+        .feature-card:hover, .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(24,51,91,0.10);
+        }
+
+        .icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+
+        .feature-card h3, .course-card h3 {
+            color: #173d72;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p, .course-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        .course-card {
+            border-top: 4px solid #079fce;
+        }
+
+        .course-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: #0786b8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .about {
+            background: #eaf3ff;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 780px;
+            margin: auto;
+        }
+
+        .about-content p {
+            color: #53647c;
+            margin-top: 14px;
+        }
+
+        .contact {
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #64748b;
+            margin: 10px 0 20px;
+        }
+
+        footer {
+            background: #102d59;
+            color: #dce7f7;
+            text-align: center;
+            padding: 24px 7%;
+            font-size: 14px;
+        }
+
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .hero-art {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .features, .courses {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">IAC<span>SD</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#courses">Courses</a>
+            <a href="#features">Why IACSD</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="tag">Learn · Build · Grow</div>
+
+                <h1>Build Your Future in <span>Technology</span></h1>
+
+                <p>
+                    Explore technology-focused learning in software development,
+                    cloud computing, DevOps and IT infrastructure. Build practical
+                    skills and take the next step in your IT career.
+                </p>
+
+                <a href="#courses" class="btn">Explore Courses →</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+
+            <div class="hero-art">
+                <div class="symbol">⌘</div>
+                <h2>Think. Code. Innovate.</h2>
+                <p>Your journey into the world of technology starts here.</p>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="section-title">
+                <h2>Why Choose IACSD?</h2>
+                <p>Learn skills that help you prepare for the technology industry.</p>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="icon">💻</div>
+                    <h3>Practical Learning</h3>
+                    <p>Strengthen your knowledge through hands-on exercises and technical projects.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Industry-Relevant Skills</h3>
+                    <p>Explore modern tools, technologies and concepts used in IT.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Career Preparation</h3>
+                    <p>Develop technical knowledge, problem-solving skills and interview confidence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="courses">
+            <div class="section-title">
+                <h2>Explore Our Learning Areas</h2>
+                <p>Discover a technology path that matches your career goals.</p>
+            </div>
+
+            <div class="courses">
+                <div class="course-card">
+                    <div class="icon">☁️</div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>Explore cloud platforms, automation, CI/CD pipelines, containers and deployment workflows.</p>
+                    <a href="#contact" class="course-link">Enquire Now →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="icon">🛡️</div>
+                    <h3>IT Infrastructure & Security</h3>
+                    <p>Learn about operating systems, networking, system administration and cybersecurity concepts.</p>
+                    <a href="#contact" class="course-link">Enquire Now →</a>
+                </div>
+
+                <div class="course-card">
+                    <div class="icon">⌨️</div>
+                    <h3>Software Development</h3>
+                    <p>Build your programming foundation and explore application development and databases.</p>
+                    <a href="#contact" class="course-link">Enquire Now →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-content">
+                <div class="section-title">
+                    <h2>About IACSD</h2>
+                </div>
+
+                <p>
+                    The Institute for Advanced Computing and Software Development
+                    (IACSD) focuses on advanced computing and software development
+                    education. Explore technical learning opportunities and develop
+                    skills for a technology-driven future.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="section-title">
+                <h2>Ready to Start Learning?</h2>
+                <p>Contact the institute to confirm current courses, admissions and fees.</p>
+                <a href="https://www.iacsd.com/" class="btn" target="_blank" rel="noopener noreferrer">
+                    Visit Official Website →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 IACSD Frontend Demo. Created for educational purposes.</p>
+    </footer>
+
+</body>
+</html>
+```
