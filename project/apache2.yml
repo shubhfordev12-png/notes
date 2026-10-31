@@ -1,0 +1,13 @@
+---
+- name: install apache2
+  hosts: nodes
+  become: true
+
+  tasks:
+    - name: install apache2, tree and curl
+      ansible.builtin.apt:
+        name:
+          - apache2
+          - tree
+          - curl
+        state: present
