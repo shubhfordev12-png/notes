@@ -18,3 +18,7 @@ RUN apt install jenkins -y
 
 EXPOSE 8080
 CMD ["java", "-jar", "/usr/share/java/jenkins.war", "--httpPort=8080"]
+
+#docker build -t itiss .
+#docker run --name myweb -d -p 80:8080 itiss
+#docker logs myweb
